@@ -22,17 +22,17 @@ Or install it yourself as:
 
 Add this to simple_iugu.rb Initializer:
 ```ruby
-IuguSimple.api_key = YOUR_LIVE_API_TOKEN
-IuguSimple.api_key_test = YOUR_TEST_API_TOKEN
-IuguSimple.iugu_account_id = YOUR_ACCOUNT_ID
-IuguSimple.is_test = TRUE_OR_FALSE
+SimpleIugu.api_key = YOUR_LIVE_API_TOKEN
+SimpleIugu.api_key_test = YOUR_TEST_API_TOKEN
+SimpleIugu.iugu_account_id = YOUR_ACCOUNT_ID
+SimpleIugu.is_test = TRUE_OR_FALSE
 ```
 
 
 ## Customer
 ### Create    
 ```ruby  
-IuguSimple::Customer.create({
+SimpleIugu::Customer.create({
     email: 'email@example.com',
     name: 'example'
 }, ACCOUNT_ACCESS_TOKEN)
@@ -40,7 +40,7 @@ IuguSimple::Customer.create({
     Documentation https://dev.iugu.com/v1.0/reference#testinput-2
 ### Update
 ```ruby  
-IuguSimple::Customer.update(CUSTOMER_ID, {
+SimpleIugu::Customer.update(CUSTOMER_ID, {
     email: 'email@example.com',
     name: 'example'
 }, ACCOUNT_ACCESS_TOKEN)
@@ -48,24 +48,24 @@ IuguSimple::Customer.update(CUSTOMER_ID, {
     Documentation https://dev.iugu.com/v1.0/reference#alterarr
 ### Destroy
 ```ruby  
-IuguSimple::Customer.delete(CUSTOMER_ID, ACCOUNT_ACCESS_TOKEN)
+SimpleIugu::Customer.delete(CUSTOMER_ID, ACCOUNT_ACCESS_TOKEN)
 ```
     Documentation https://dev.iugu.com/v1.0/reference#remover-1
 ### Index
 ```ruby  
-IuguSimple::Customer.index(ACCOUNT_ACCESS_TOKEN)
+SimpleIugu::Customer.index(ACCOUNT_ACCESS_TOKEN)
 ```
     Documentation https://dev.iugu.com/v1.0/reference#listar-1
 ### Show
 ```ruby  
-IuguSimple::Customer.show(CUSTOMER_ID, ACCOUNT_ACCESS_TOKEN)
+SimpleIugu::Customer.show(CUSTOMER_ID, ACCOUNT_ACCESS_TOKEN)
 ```
     Documentation https://dev.iugu.com/v1.0/reference#
 
 ## Payment Token
 ### Create
 ```ruby  
-IuguSimple::PaymentToken.create({
+SimpleIugu::PaymentToken.create({
     method: credit_card,
     test: TRUE_OR_FALSE,
     data: {
@@ -83,7 +83,7 @@ IuguSimple::PaymentToken.create({
 ## Payment Method
 ### Create
 ```ruby  
-IuguSimple::PaymentMethod.create(customer_id: CUSTOMER_ID,{
+SimpleIugu::PaymentMethod.create(customer_id: CUSTOMER_ID,{
     description: 'My credit card',
     token: PAYMENT_TOKEN,
     set_as_default: TRUE_OR_FALSE
@@ -92,7 +92,7 @@ IuguSimple::PaymentMethod.create(customer_id: CUSTOMER_ID,{
     Documentation https://dev.iugu.com/v1.0/reference#testinput-3
 ### Update
 ```ruby  
-IuguSimple::PaymentMethod.update(customer_id: CUSTOMER_ID, id: ID, {
+SimpleIugu::PaymentMethod.update(customer_id: CUSTOMER_ID, id: ID, {
     description: 'My credit card',
     set_as_default: TRUE_OR_FALSE
 }, ACCOUNT_ACCESS_TOKEN)
@@ -100,24 +100,24 @@ IuguSimple::PaymentMethod.update(customer_id: CUSTOMER_ID, id: ID, {
     Documentation https://dev.iugu.com/v1.0/reference#alterar
 ### Destroy
 ```ruby  
-IuguSimple::PaymentMethod.delete(customer_id: CUSTOMER_ID, id: ID, ACCOUNT_ACCESS_TOKEN)
+SimpleIugu::PaymentMethod.delete(customer_id: CUSTOMER_ID, id: ID, ACCOUNT_ACCESS_TOKEN)
 ```
     Documentation https://dev.iugu.com/v1.0/reference#remover-2
 ### Show
 ```ruby  
-IuguSimple::PaymentMethod.show(customer_id: CUSTOMER_ID, id: ID, ACCOUNT_ACCESS_TOKEN)
+SimpleIugu::PaymentMethod.show(customer_id: CUSTOMER_ID, id: ID, ACCOUNT_ACCESS_TOKEN)
 ```
     Documentation https://dev.iugu.com/v1.0/reference#testinput-4
 ### Index
 ```ruby  
-IuguSimple::PaymentMethod.index(customer_id: CUSTOMER_ID, ACCOUNT_ACCESS_TOKEN)
+SimpleIugu::PaymentMethod.index(customer_id: CUSTOMER_ID, ACCOUNT_ACCESS_TOKEN)
 ```
     Documentation https://dev.iugu.com/v1.0/reference#listar-2
 
 ## Invoice
 ### Create
 ```ruby  
-IuguSimple::Invoice.create({
+SimpleIugu::Invoice.create({
     email: 'email@example.com',
     due_date: "AAA-MM-DD",
     items: [
@@ -132,42 +132,42 @@ IuguSimple::Invoice.create({
     Documentation https://dev.iugu.com/v1.0/reference#criar-fatura
 ### Duplicate
 ```ruby  
-IuguSimple::Invoice.duplicate(INVOICE_ID, {
+SimpleIugu::Invoice.duplicate(INVOICE_ID, {
     due_date: "AAA-MM-DD"
 }, ACCOUNT_ACCESS_TOKEN)
 ```
     Documentation https://dev.iugu.com/v1.0/reference#gerar-segunda-via
 ### Capture
 ```ruby  
-IuguSimple::Invoice.capture(INVOICE_ID, ACCOUNT_ACCESS_TOKEN)
+SimpleIugu::Invoice.capture(INVOICE_ID, ACCOUNT_ACCESS_TOKEN)
 ```
     Documentation https://dev.iugu.com/v1.0/reference#capturar-fatura
 ### Show
 ```ruby  
-IuguSimple::Invoice.show(INVOICE_ID, ACCOUNT_ACCESS_TOKEN)
+SimpleIugu::Invoice.show(INVOICE_ID, ACCOUNT_ACCESS_TOKEN)
 ```
     Documentation https://dev.iugu.com/v1.0/reference#detalhes
 ### Index
 ```ruby  
-IuguSimple::Invoice.index({
+SimpleIugu::Invoice.index({
     limit: 50
 }, ACCOUNT_ACCESS_TOKEN)
 ```
     Documentation https://dev.iugu.com/v1.0/reference#listar-faturas
 ### Cancel
 ```ruby  
-IuguSimple::Invoice.cancel(INVOICE_ID, ACCOUNT_ACCESS_TOKEN)
+SimpleIugu::Invoice.cancel(INVOICE_ID, ACCOUNT_ACCESS_TOKEN)
 ```
     Documentation https://dev.iugu.com/v1.0/reference#cancelar
 ### Refund
 ```ruby  
-IuguSimple::Invoice.refund(INVOICE_ID, ACCOUNT_ACCESS_TOKEN)
+SimpleIugu::Invoice.refund(INVOICE_ID, ACCOUNT_ACCESS_TOKEN)
 ```
     Documentation https://dev.iugu.com/v1.0/reference#reembolsar-fatura
 ## Charge
 ### Create
 ```ruby  
-IuguSimple::Charge.create({
+SimpleIugu::Charge.create({
     customer_payment_method_id: CUSTOMER_PAYMENT_METHOD
 }, ACCOUNT_ACCESS_TOKEN)
 ```
@@ -175,7 +175,7 @@ IuguSimple::Charge.create({
 ## Sub Account
 ### Create
 ```ruby  
-IuguSimple::SubAccount.create({
+SimpleIugu::SubAccount.create({
     name: PARTNER_NAME,
     comission: {
         percent: SOME_PERCENT
@@ -185,7 +185,7 @@ IuguSimple::SubAccount.create({
      Documentation https://dev.iugu.com/v1.0/reference#criar-conta
 ### Verify
 ```ruby  
-IuguSimple::SubAccount.verify(IUGU_ACCOUNT_ID, {
+SimpleIugu::SubAccount.verify(IUGU_ACCOUNT_ID, {
     data: {
     }
 }, ACCOUNT_ACCESS_TOKEN)
@@ -193,19 +193,19 @@ IuguSimple::SubAccount.verify(IUGU_ACCOUNT_ID, {
      Documentation https://dev.iugu.com/v1.0/reference#enviar-verificacao-de-conta
 ### Update
 ```ruby  
-IuguSimple::SubAccount.update({
+SimpleIugu::SubAccount.update({
     name: OTHER_NAME
 }, ACCOUNT_ACCESS_TOKEN)
 ```
      Documentation https://dev.iugu.com/v1.0/reference#configurar-conta
 ### Show
 ```ruby  
-IuguSimple::SubAccount.show(IUGU_ACCOUNT_ID, ACCOUNT_ACCESS_TOKEN)
+SimpleIugu::SubAccount.show(IUGU_ACCOUNT_ID, ACCOUNT_ACCESS_TOKEN)
 ```
      Documentation https://dev.iugu.com/v1.0/reference#informacoes-da-conta
 ### Index
 ```ruby  
-IuguSimple::SubAccount.index({
+SimpleIugu::SubAccount.index({
     limit: 50
 }, ACCOUNT_ACCESS_TOKEN)
 ```
@@ -213,7 +213,7 @@ IuguSimple::SubAccount.index({
 ## Bank
 ### Create
 ```ruby  
-IuguSimple::Bank.create({
+SimpleIugu::Bank.create({
     agency: AGENCY_NUMBER,
     account: ACCOUNT_NUMBER,
     account_type: CC_OR_CP,
@@ -223,13 +223,13 @@ IuguSimple::Bank.create({
      Documentation https://dev.iugu.com/v1.0/reference#adicionar-domicilio-bancario
 ### Index
 ```ruby  
-IuguSimple::Bank.index(ACCOUNT_ACCESS_TOKEN)
+SimpleIugu::Bank.index(ACCOUNT_ACCESS_TOKEN)
 ```
      Documentation https://dev.iugu.com/v1.0/reference#verificar-envio-de-domic%C3%ADlio-banc%C3%A1rio
 ## Transfer
 ### Create
 ```ruby  
-IuguSimple::Transfer.create({
+SimpleIugu::Transfer.create({
     receiver_id: ACCOUNT_ID,
     amount_cents: AMOUNT_CENTS
 }, ACCOUNT_ACCESS_TOKEN)
@@ -238,7 +238,7 @@ IuguSimple::Transfer.create({
 ## Withdrawal
 ### Create
 ```ruby  
-IuguSimple::Withdrawal.create(ACCOUNT_ID, {
+SimpleIugu::Withdrawal.create(ACCOUNT_ID, {
     amount: AMOUNT
 }, ACCOUNT_ACCESS_TOKEN)
 ```
