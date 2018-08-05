@@ -1,12 +1,13 @@
 require 'faraday'
 require 'base64'
 require 'json'
+require 'byebug'
 
 module SimpleIugu
   class Base
 
     def self.prepare_request(req = nil, endpoint = nil, params = nil, body = nil, account_access_token = nil)
-      account_access_token == nil ? SimpleIugu.is_test.present? ? SimpleIugu.api_key_test : SimpleIugu.api_key : account_access_token
+      account_access_token == nil ? SimpleIugu.is_test ? SimpleIugu.api_key_test : SimpleIugu.api_key : account_access_token
 
       req.url "#{SimpleIugu.api_version}#{endpoint}" if endpoint != nil
 

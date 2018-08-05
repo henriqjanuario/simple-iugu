@@ -8,7 +8,7 @@ module SimpleIugu
         prepare_request(req, endpoint, nil, body, access_token)
       end
 
-      format_response(reponse)
+      format_response(response)
     end
 
   end

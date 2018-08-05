@@ -8,7 +8,7 @@ module SimpleIugu
         prepare_request(req, endpoint, nil, body, iugu_user_token)
       end
 
-      format_response(reponse)
+      format_response(response)
     end
 
     def self.index(iugu_user_token = nil)
@@ -18,7 +18,7 @@ module SimpleIugu
         prepare_request(req, endpoint, nil, nil, iugu_user_token)
       end
 
-      format_response(reponse)
+      format_response(response)
     end
 
   end

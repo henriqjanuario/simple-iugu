@@ -8,7 +8,7 @@ module SimpleIugu
         prepare_request(req, endpoint, nil, body, access_token)
       end
 
-      format_response(reponse)
+      format_response(response)
     end
 
     def self.update(params = {}, access_token = nil)
@@ -18,7 +18,7 @@ module SimpleIugu
         prepare_request(req, endpoint, nil, body, access_token)
       end
 
-      format_response(reponse)
+      format_response(response)
     end
 
     def self.show(iugu_account_id = nil, access_token = nil)
@@ -28,7 +28,7 @@ module SimpleIugu
         prepare_request(req, endpoint, nil, nil, access_token)
       end
 
-      format_response(reponse)
+      format_response(response)
     end
 
     def self.index(params = {}, access_token = nil)
@@ -38,7 +38,7 @@ module SimpleIugu
         prepare_request(req, endpoint, params, nil, access_token)
       end
 
-      format_response(reponse)
+      format_response(response)
     end
 
     def self.verify(iugu_account_id = nil, params = {}, access_token = nil)
@@ -48,7 +48,7 @@ module SimpleIugu
         prepare_request(req, endpoint, nil, body, access_token)
       end
 
-      format_response(reponse)
+      format_response(response)
     end
 
   end
