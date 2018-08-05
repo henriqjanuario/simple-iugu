@@ -7,7 +7,12 @@ module SimpleIugu
   class Base
 
     def self.prepare_request(req = nil, endpoint = nil, params = nil, body = nil, account_access_token = nil)
-      account_access_token == nil ? SimpleIugu.is_test ? SimpleIugu.api_key_test : SimpleIugu.api_key : account_access_token
+
+      if account_access_token.nil?
+        account_access_token = SimpleIugu.is_test ? SimpleIugu.api_key_test : SimpleIugu.api_key
+      else
+        account_access_token
+      end
 
       req.url "#{SimpleIugu.api_version}#{endpoint}" if endpoint != nil
 
