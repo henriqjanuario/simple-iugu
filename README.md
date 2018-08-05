@@ -20,7 +20,7 @@ Or install it yourself as:
 
     $ gem install simple_iugu
 
-Add this to IuguSimple.rb Initializer:
+Add this to simple_iugu.rb Initializer:
 ```ruby
 IuguSimple.api_key = YOUR_LIVE_API_TOKEN
 IuguSimple.api_key_test = YOUR_TEST_API_TOKEN
