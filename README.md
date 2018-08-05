@@ -246,4 +246,4 @@ IuguSimple::Withdrawal.create(ACCOUNT_ID, {
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/simple_iugu.
+Bug reports and pull requests are welcome on GitHub at https://github.com/henriqjanuario/simple_iugu.
