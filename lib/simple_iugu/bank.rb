@@ -1,7 +1,7 @@
 module SimpleIugu
   class Bank < Base
 
-    def self.create(iugu_user_token = nil, params = {})
+    def self.create(params = {}, iugu_user_token = nil)
       response = rest_request.post do |req|
         endpoint = "bank_verification"
         body = params

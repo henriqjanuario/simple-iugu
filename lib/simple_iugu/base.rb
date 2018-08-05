@@ -8,7 +8,7 @@ module SimpleIugu
 
     API_KEY = SimpleIugu.is_test ? SimpleIugu.api_key_test : SimpleIugu.api_key
 
-    def self.prepare_request(req, endpoint, params, body, account_access_token = API_KEY)
+    def self.prepare_request(req = nil, endpoint = nil, params = nil, body = nil, account_access_token = nil)
       account_access_token == nil ? API_KEY : account_access_token
 
       req.url "#{SimpleIugu.api_version}#{endpoint}" if endpoint != nil
