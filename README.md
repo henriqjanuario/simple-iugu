@@ -210,6 +210,22 @@ IuguSimple::SubAccount.index({
 }, ACCOUNT_ACCESS_TOKEN)
 ```
      Documentation: https://dev.iugu.com/v1.0/reference#listar-as-contas
+## Bank
+### Create
+```ruby  
+IuguSimple::Bank.create({
+    agency: AGENCY_NUMBER,
+    account: ACCOUNT_NUMBER,
+    account_type: CC_OR_CP,
+    bank: BANK_NUMBER,
+}, ACCOUNT_ACCESS_TOKEN)
+```
+     Documentation: https://dev.iugu.com/v1.0/reference#adicionar-domicilio-bancario
+### Index
+```ruby  
+IuguSimple::Bank.index(ACCOUNT_ACCESS_TOKEN)
+```
+     Documentation: https://dev.iugu.com/v1.0/reference#verificar-envio-de-domic%C3%ADlio-banc%C3%A1rio
 ## Transfer
 ### Create
 ```ruby  
@@ -230,4 +246,4 @@ IuguSimple::Withdrawal.create(ACCOUNT_ID, {
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/henriqjanuario/simple_iugu.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/simple_iugu.
