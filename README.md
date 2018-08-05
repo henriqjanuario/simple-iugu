@@ -37,7 +37,7 @@ IuguSimple::Customer.create({
     name: 'example'
 }, ACCOUNT_ACCESS_TOKEN)
 ```
-    Documentation [https://dev.iugu.com/v1.0/reference#testinput-2](https://dev.iugu.com/v1.0/reference#testinput-2)
+    Documentation https://dev.iugu.com/v1.0/reference#testinput-2
 ### Update
 ```ruby  
 IuguSimple::Customer.update(CUSTOMER_ID, {
