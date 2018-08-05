@@ -7,9 +7,9 @@ module SimpleIugu
         body = params
         prepare_request(req, endpoint, nil, body, iugu_user_token)
       end
+      format_response(response)
+
     end
-
-    format_response(reponse)
+    
   end
-
 end

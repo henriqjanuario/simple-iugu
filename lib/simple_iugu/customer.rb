@@ -19,7 +19,7 @@ module SimpleIugu
       format_response(reponse)
     end
 
-    def self.create(params = {} access_token = nil)
+    def self.create(params = {}, access_token = nil)
       reponse = rest_request.post do |req|
         endpoint = "customers"
         body = params
