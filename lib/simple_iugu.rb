@@ -1,7 +1,14 @@
 require_relative "simple_iugu/version"
 require_relative "simple_iugu/base"
+require_relative "simple_iugu/bank"
+require_relative "simple_iugu/charge"
 require_relative "simple_iugu/customer"
+require_relative "simple_iugu/invoice"
+require_relative "simple_iugu/payment_method"
 require_relative "simple_iugu/payment_token"
+require_relative "simple_iugu/sub_account"
+require_relative "simple_iugu/transfer"
+require_relative "simple_iugu/withdrawal"
 
 module SimpleIugu
   class << self

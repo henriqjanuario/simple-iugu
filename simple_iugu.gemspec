@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Iugu Gem"
   spec.description   = ""
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/henriqjanuario/iugu-simple"
   spec.license       = "MIT"
 
   spec.files         = Dir['lib/**/*']
