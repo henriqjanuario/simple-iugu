@@ -1,27 +1,27 @@
 module SimpleIugu
-  class Customer < Base
+  class PaymentMethod < Base
 
-    def self.index
+    def self.index(customer_id)
       reponse = rest_request.get do |req|
-        endpoint = "customers"
+        endpoint = "customers/#{customer_id}/payment_methods"
         prepare_request(req, endpoint, nil, nil)
       end
 
       format_response(reponse)
     end
 
-    def self.show(id)
+    def self.show(customer_id, id)
       reponse = rest_request.get do |req|
-        endpoint = "customers/#{id}"
+        endpoint = "customers/#{customer_id}/payment_methods/#{id}"
         prepare_request(req, endpoint, nil, nil)
       end
 
       format_response(reponse)
     end
 
-    def self.create(params = {})
+    def self.create(customer_id, params = {})
       reponse = rest_request.post do |req|
-        endpoint = "customers"
+        endpoint = "customers/#{customer_id}/payment_methods"
         body = params
         prepare_request(req, endpoint, nil, body)
       end
@@ -29,9 +29,9 @@ module SimpleIugu
       format_response(reponse)
     end
 
-    def self.update(params = {}, id)
+    def self.update(customer_id, id, params = {})
       reponse = rest_request.put do |req|
-        endpoint = "customers/#{id}"
+        endpoint = "customers/#{customer_id}/payment_methods/#{id}"
         body = params
         prepare_request(req, endpoint, nil, body)
       end
@@ -39,9 +39,9 @@ module SimpleIugu
       format_response(reponse)
     end
 
-    def self.destroy(id)
+    def self.destroy(customer_id, id)
       reponse = rest_request.delete do |req|
-        endpoint = "customers/#{id}"
+        endpoint = "customers/#{customer_id}/payment_methods/#{id}"
         prepare_request(req, endpoint, nil, nil)
       end
 

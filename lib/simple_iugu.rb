@@ -1,6 +1,7 @@
 require_relative "simple_iugu/version"
 require_relative "simple_iugu/base"
 require_relative "simple_iugu/customer"
+require_relative "simple_iugu/payment_token"
 
 module SimpleIugu
   class << self
