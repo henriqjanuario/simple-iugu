@@ -9,6 +9,8 @@ require_relative "simple_iugu/payment_token"
 require_relative "simple_iugu/sub_account"
 require_relative "simple_iugu/transfer"
 require_relative "simple_iugu/withdrawal"
+require_relative 'simple_iugu/engine'
+
 
 module SimpleIugu
   autoload :Customer, 'simple_iugu/models/customer.rb'
