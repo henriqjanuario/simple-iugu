@@ -1,0 +1,8 @@
+pt-BR:
+  activerecord:
+    errors:
+      models:
+
+  simple_iugu:
+    active_record:
+      model:

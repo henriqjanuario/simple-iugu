@@ -11,6 +11,8 @@ require_relative "simple_iugu/transfer"
 require_relative "simple_iugu/withdrawal"
 
 module SimpleIugu
+  autoload :Customer, 'simple_iugu/models/customer.rb'
+
   class << self
     attr_accessor :api_key
     attr_accessor :api_key_test
