@@ -1,10 +1,7 @@
 class CreateSimpleIuguCustomers < ActiveRecord::Migration[5.2]
   def change
     create_table :simple_iugu_customers do |t|
-      # t.string :token, index: true
-      # t.string :platform, index: true
-      # t.references :pushable, polymorphic: true, index: true
-
+  
       t.string :email
       t.string :name
       t.string :notes

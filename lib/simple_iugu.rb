@@ -22,6 +22,10 @@ module SimpleIugu
     attr_accessor :is_test
   end
 
+  def self.setup
+    yield self
+  end
+
   @api_version = 'v1/'
   @endpoint = 'https://api.iugu.com'
 
