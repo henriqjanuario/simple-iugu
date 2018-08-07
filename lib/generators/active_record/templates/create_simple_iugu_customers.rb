@@ -16,7 +16,7 @@ class CreateSimpleIuguCustomers < ActiveRecord::Migration[5.2]
       t.string :state
       t.string :district
       t.string :complement
-      t.belongs_to :customerable, polymorphic: true, index: true
+      t.references :customerable
 
       t.timestamps null: false
     end
