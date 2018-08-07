@@ -18,9 +18,9 @@ class SimpleIuguGenerator < Rails::Generators::NamedBase
 				"\n\tModel \"#{file_name.titlecase}\" doesn't exists. Please, create your Model and try again."
 		end
 
-		inject_into_file model_path, "\n\thas_one :customer, as: :customerable, class_name: 'SimpleIugu::Customer'", after: '< ActiveRecord::Base'
+		inject_into_file model_path, "\n\thas_one :customer, as: :customerable, class_name: 'Iugu::Customer'", after: '< ActiveRecord::Base'
 
-    inject_into_file model_path, "\n\thas_one :customer, as: :customerable, class_name: 'SimpleIugu::Customer'", after: '< ApplicationRecord'
+    inject_into_file model_path, "\n\thas_one :customer, as: :customerable, class_name: 'Iugu::Customer'", after: '< ApplicationRecord'
 
     case self.behavior
     when :invoke
