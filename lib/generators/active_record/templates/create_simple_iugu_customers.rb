@@ -1,7 +1,7 @@
 class CreateSimpleIuguCustomers < ActiveRecord::Migration[5.2]
   def change
     create_table :simple_iugu_customers do |t|
-  
+
       t.string :email
       t.string :name
       t.string :notes
@@ -16,7 +16,7 @@ class CreateSimpleIuguCustomers < ActiveRecord::Migration[5.2]
       t.string :state
       t.string :district
       t.string :complement
-      t.belongs_to :customerable
+      t.belongs_to :customerable, polymorphic: true, index: true
 
       t.timestamps null: false
     end
