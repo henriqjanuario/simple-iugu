@@ -1,14 +1,10 @@
 module SimpleIugu
   class Withdrawal < Base
 
-    def self.create(id, params = {}, iugu_user_token = nil)
-      response = rest_request.post do |req|
-        endpoint = "accounts/#{id}/request_withdraw"
-        body = params
-        prepare_request(req, endpoint, nil, body, iugu_user_token)
-      end
+    def self.create(id, body = {}, access_token = nil)
+      response = post("accounts/#{id}/request_withdraw", body, access_token)
 
-      format_response(response)
+      symbolize(response.parsed_response)
     end
 
   end

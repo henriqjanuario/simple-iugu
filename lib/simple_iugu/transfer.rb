@@ -1,15 +1,13 @@
 module SimpleIugu
   class Transfer < Base
 
-    def self.create(params = {}, iugu_user_token = nil)
-      response = rest_request.post do |req|
-        endpoint = "transfers"
-        body = params
-        prepare_request(req, endpoint, nil, body, iugu_user_token)
-      end
-      format_response(response)
+    BASE_ENDPOINT = 'transfers'
 
+    def self.create(body = {}, access_token = nil)
+      response = post(BASE_ENDPOINT, body, access_token)
+
+      symbolize(response.parsed_response)
     end
-    
+
   end
 end

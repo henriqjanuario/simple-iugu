@@ -1,15 +1,13 @@
 module SimpleIugu
   class Charge < Base
 
-    def self.create(params = {}, access_token = nil)
-      response = rest_request.post do |req|
-        endpoint = "charge"
-        body = params
-        prepare_request(req, endpoint, nil, body, access_token)
-      end
+    BASE_ENDPOINT = 'charge'
 
-      format_response(response)
+    def self.create(body = {}, access_token = nil)
+      response = post(BASE_ENDPOINT, body, access_token)
+
+      symbolize(response.parsed_response)
     end
-
+    
   end
 end

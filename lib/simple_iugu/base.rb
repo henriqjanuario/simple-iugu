@@ -1,47 +1,38 @@
-require 'faraday'
 require 'base64'
 require 'json'
 require 'byebug'
+require 'httparty'
 
 module SimpleIugu
   class Base
 
-    def self.prepare_request(req = nil, endpoint = nil, params = nil, body = nil, account_access_token = nil)
+    def self.get(endpoint, query, account_access_token)
+      HTTParty.get("#{SimpleIugu.base_uri}/#{SimpleIugu.api_version}#{endpoint}", headers: set_headers(account_access_token), query: query)
+    end
 
+    def self.post(endpoint, body, account_access_token)
+      HTTParty.post("#{SimpleIugu.base_uri}/#{SimpleIugu.api_version}#{endpoint}", headers: set_headers(account_access_token), body: body)
+    end
+
+    def self.put(endpoint, body, account_access_token)
+      HTTParty.put("#{SimpleIugu.base_uri}/#{SimpleIugu.api_version}#{endpoint}", headers: set_headers(account_access_token), body: body)
+    end
+
+    def self.delete(endpoint, account_access_token)
+      HTTParty.delete("#{SimpleIugu.base_uri}/#{SimpleIugu.api_version}#{endpoint}", headers: set_headers(account_access_token))
+    end
+
+    def self.set_headers(account_access_token)
+      return { 'Content-Type': 'application/json', 'Authorization': "Basic #{Base64.encode64(ensure_account_access_token(account_access_token))}" }
+    end
+
+    def self.ensure_account_access_token(account_access_token)
       if account_access_token.nil?
         account_access_token = SimpleIugu.is_test ? SimpleIugu.api_key_test : SimpleIugu.api_key
       else
         account_access_token
       end
-
-      req.url "#{SimpleIugu.api_version}#{endpoint}" if endpoint != nil
-
-      req.headers['Content-Type'] = 'application/json'
-      req.headers['Accept'] = 'application/json'
-
-      req.headers['Authorization'] = "Basic #{Base64.encode64(account_access_token)}"
-
-      if params != nil
-        params.each do |key, value|
-          req.params[key] = value
-        end
-      end
-
-      if body != nil
-        req.body = body.to_json
-      end
-
-    end
-
-    def self.rest_request
-      Faraday.new(url: SimpleIugu.base_uri)
-    end
-
-    def self.format_response(response)
-      {
-        status: response.status,
-        body: symbolize(JSON.parse(response.body))
-      }
+      # 'bebccae8ba2ed6e24c661929f845144f'
     end
 
     def self.symbolize(obj)

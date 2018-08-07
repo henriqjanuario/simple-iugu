@@ -1,54 +1,34 @@
 module SimpleIugu
   class SubAccount < Base
 
-    def self.create(params = {}, access_token = nil)
-      response = rest_request.post do |req|
-        endpoint = "marketplace/create_account"
-        body = params
-        prepare_request(req, endpoint, nil, body, access_token)
-      end
+    def self.create(body = {}, access_token = nil)
+      response = post("marketplace/create_account", body, access_token)
 
-      format_response(response)
+      symbolize(response.parsed_response)
     end
 
-    def self.update(params = {}, access_token = nil)
-      response = rest_request.post do |req|
-        endpoint = "accounts/configuration"
-        body = params
-        prepare_request(req, endpoint, nil, body, access_token)
-      end
+    def self.update(body = {}, access_token = nil)
+      response = put("accounts/configuration", body, access_token)
 
-      format_response(response)
+      symbolize(response.parsed_response)
     end
 
     def self.show(iugu_account_id = nil, access_token = nil)
-      response = rest_request.get do |req|
-        endpoint = "accounts/#{iugu_account_id}"
+      response = get("accounts/#{iugu_account_id}", nil, access_token)
 
-        prepare_request(req, endpoint, nil, nil, access_token)
-      end
-
-      format_response(response)
+      symbolize(response.parsed_response)
     end
 
-    def self.index(params = {}, access_token = nil)
-      response = rest_request.get do |req|
-        endpoint = "marketplace"
-        params = params
-        prepare_request(req, endpoint, params, nil, access_token)
-      end
+    def self.index(query = {}, access_token = nil)
+      response = get("marketplace", query, access_token)
 
-      format_response(response)
+      symbolize(response.parsed_response)
     end
 
-    def self.verify(iugu_account_id = nil, params = {}, access_token = nil)
-      response = rest_request.post do |req|
-        endpoint = "accounts/#{iugu_account_id}/request_verification"
-        body = params
-        prepare_request(req, endpoint, nil, body, access_token)
-      end
+    def self.verify(iugu_account_id = nil, body = {}, access_token = nil)
+      response = post("accounts/#{iugu_account_id}/request_verification", body, access_token)
 
-      format_response(response)
+      symbolize(response.parsed_response)
     end
 
   end
