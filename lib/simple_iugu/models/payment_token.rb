@@ -11,11 +11,15 @@ class SimpleIugu::PaymentToken < ActiveRecord::Base
       return false
     end
 
+    self.holder_name        = response[:extra_info][:holder_name]
     self.bin                = response[:extra_info][:bin]
     self.brand              = response[:extra_info][:brand]
-    self.number             = response[:extra_info][:display_number]
+    self.display_number     = response[:extra_info][:display_number]
+    self.month              = response[:extra_info][:month]
+    self.year               = response[:extra_info][:year]
     self.iugu_id            = response[:id]
     self.verification_value = 'XXX'
+    self.data               = nil
   end
 
   def payment_method
