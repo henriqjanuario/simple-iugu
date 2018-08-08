@@ -20,7 +20,7 @@ module SimpleIugu
         symbolize(response.parsed_response)
       end
 
-      def self.index(query = {}, access_token = nil)
+      def self.index(query = nil, access_token = nil)
         response = get("marketplace", query, access_token)
 
         symbolize(response.parsed_response)

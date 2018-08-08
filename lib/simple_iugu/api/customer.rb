@@ -4,7 +4,7 @@ module SimpleIugu
 
       BASE_ENDPOINT = 'customers'
 
-      def self.index(query, access_token = nil)
+      def self.index(query = nil, access_token = nil)
         response = get(BASE_ENDPOINT, query, access_token)
 
         symbolize(response.parsed_response)[:items]
