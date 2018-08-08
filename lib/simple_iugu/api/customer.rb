@@ -35,7 +35,7 @@ module SimpleIugu
       def self.destroy(id, access_token = nil)
         url = "#{BASE_ENDPOINT}/#{id}"
 
-        response = delete(url, nil, access_token)
+        response = delete(url, access_token)
 
         symbolize(response.parsed_response)
       end
