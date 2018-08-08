@@ -12,8 +12,7 @@ class SimpleIugu::Customer < ActiveRecord::Base
 
   def create_customer_on_iugu
     response = SimpleIugu::Api::Customer.create(self.attributes)
-
-    byebug
+    
     if response[:errors].present?
       response[:errors].map{ |error| self.errors.messages.merge(error) }
       return false
