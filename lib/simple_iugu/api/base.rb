@@ -12,11 +12,11 @@ module SimpleIugu
       end
 
       def self.post(endpoint, body, account_access_token)
-        HTTParty.post("#{SimpleIugu.base_uri}/#{SimpleIugu.api_version}#{endpoint}", headers: set_headers(account_access_token), body: body)
+        HTTParty.post("#{SimpleIugu.base_uri}/#{SimpleIugu.api_version}#{endpoint}", headers: set_headers(account_access_token), body: body.to_json)
       end
 
       def self.put(endpoint, body, account_access_token)
-        HTTParty.put("#{SimpleIugu.base_uri}/#{SimpleIugu.api_version}#{endpoint}", headers: set_headers(account_access_token), body: body)
+        HTTParty.put("#{SimpleIugu.base_uri}/#{SimpleIugu.api_version}#{endpoint}", headers: set_headers(account_access_token), body: body.to_json)
       end
 
       def self.delete(endpoint, account_access_token)
