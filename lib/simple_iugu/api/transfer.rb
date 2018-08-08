@@ -1,8 +1,8 @@
 module SimpleIugu
-  module Services
-    class Charge < Base
+  module Api
+    class Transfer < Base
 
-      BASE_ENDPOINT = 'charge'
+      BASE_ENDPOINT = 'transfers'
 
       def self.create(body = {}, access_token = nil)
         response = post(BASE_ENDPOINT, body, access_token)

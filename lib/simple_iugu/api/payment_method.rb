@@ -1,5 +1,5 @@
 module SimpleIugu
-  module Services
+  module Api
     class PaymentMethod < Base
 
       def self.index(customer_id, access_token = nil)

@@ -16,6 +16,8 @@ class CreateIuguCustomers < ActiveRecord::Migration[5.2]
       t.string :state
       t.string :district
       t.string :complement
+      t.string :default_payment_method_id
+      t.string :iugu_id
       t.references :customerable, polymorphic: true, index: true
 
       t.timestamps null: false

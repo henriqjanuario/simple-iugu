@@ -4,7 +4,7 @@ require 'byebug'
 require 'httparty'
 
 module SimpleIugu
-  module Services
+  module Api
     class Base
 
       def self.get(endpoint, query, account_access_token)

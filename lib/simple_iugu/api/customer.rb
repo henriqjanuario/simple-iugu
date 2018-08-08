@@ -1,5 +1,5 @@
 module SimpleIugu
-  module Services
+  module Api
     class Customer < Base
 
       BASE_ENDPOINT = 'customers'

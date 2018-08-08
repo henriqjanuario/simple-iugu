@@ -1,5 +1,5 @@
 module SimpleIugu
-  module Services
+  module Api
 
     class Invoice < Base
 

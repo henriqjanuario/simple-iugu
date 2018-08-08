@@ -1,5 +1,5 @@
 module SimpleIugu
-  module Services
+  module Api
     class Withdrawal < Base
 
       def self.create(id, body = {}, access_token = nil)

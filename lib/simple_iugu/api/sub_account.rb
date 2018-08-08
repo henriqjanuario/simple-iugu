@@ -1,5 +1,5 @@
 module SimpleIugu
-  module Services
+  module Api
     class SubAccount < Base
 
       def self.create(body = {}, access_token = nil)

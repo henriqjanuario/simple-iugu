@@ -1,15 +1,15 @@
 require_relative "simple_iugu/version"
 require_relative 'simple_iugu/engine'
-require_relative "simple_iugu/services/base"
-require_relative "simple_iugu/services/bank"
-require_relative "simple_iugu/services/charge"
-require_relative "simple_iugu/services/customer"
-require_relative "simple_iugu/services/invoice"
-require_relative "simple_iugu/services/payment_method"
-require_relative "simple_iugu/services/payment_token"
-require_relative "simple_iugu/services/sub_account"
-require_relative "simple_iugu/services/transfer"
-require_relative "simple_iugu/services/withdrawal"
+require_relative "simple_iugu/api/base"
+require_relative "simple_iugu/api/bank"
+require_relative "simple_iugu/api/charge"
+require_relative "simple_iugu/api/customer"
+require_relative "simple_iugu/api/invoice"
+require_relative "simple_iugu/api/payment_method"
+require_relative "simple_iugu/api/payment_token"
+require_relative "simple_iugu/api/sub_account"
+require_relative "simple_iugu/api/transfer"
+require_relative "simple_iugu/api/withdrawal"
 
 
 module SimpleIugu

@@ -1,5 +1,5 @@
 module SimpleIugu
-  module Services
+  module Api
     class PaymentToken < Base
 
       BASE_ENDPOINT = 'payment_token'

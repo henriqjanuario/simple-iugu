@@ -21,6 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'rails', '~> 5.2'
   spec.add_dependency 'httparty', '~> 0.16.2'
   spec.add_dependency 'byebug', "~> 10.0.2"
+  spec.add_dependency 'enumerize', '~> 2.2'
 
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
