@@ -5,7 +5,7 @@ class SimpleIugu::Customer < ActiveRecord::Base
 
   before_create :create_customer_on_iugu
 
-  def self.create_customer_on_iugu
+  def create_customer_on_iugu
     service = SimpleIugu::Services::Customer.create(self.attributes)
 
     if service[:errors].present?
@@ -13,5 +13,5 @@ class SimpleIugu::Customer < ActiveRecord::Base
       return false
     end
   end
-  
+
 end
