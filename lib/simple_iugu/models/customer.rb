@@ -6,7 +6,11 @@ class SimpleIugu::Customer < ActiveRecord::Base
   before_create :create_customer_on_iugu
 
   def create_customer_on_iugu
+    byebug
+
     service = SimpleIugu::Services::Customer.create(self.attributes)
+
+    byebug
 
     if service[:errors].present?
       service[:errors].map{ |error| self.errors.messages.merge(error) }
