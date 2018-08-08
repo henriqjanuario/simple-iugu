@@ -33,7 +33,7 @@ module SimpleIugu
         else
           account_access_token
         end
-        # 'bebccae8ba2ed6e24c661929f845144f'
+        'bebccae8ba2ed6e24c661929f845144f'
       end
 
       def self.symbolize(obj)
