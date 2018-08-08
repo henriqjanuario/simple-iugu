@@ -14,6 +14,9 @@ require_relative "simple_iugu/api/withdrawal"
 
 module SimpleIugu
   autoload :Customer, 'simple_iugu/models/customer.rb'
+  autoload :Invoice, 'simple_iugu/models/invoice.rb'
+  autoload :PaymentToken, 'simple_iugu/models/payment_token.rb'
+  autoload :PaymentMethod, 'simple_iugu/models/payment_method.rb'
 
   class << self
     attr_accessor :api_key
