@@ -7,7 +7,7 @@ class CreateIuguPaymentMethods < ActiveRecord::Migration[5.2]
       t.string :description
       t.boolean :set_as_default
 
-      t.reference :customer
+      t.references :customer
 
       t.timestamps null: false
     end

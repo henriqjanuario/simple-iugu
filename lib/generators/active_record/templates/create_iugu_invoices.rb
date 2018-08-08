@@ -12,7 +12,7 @@ class CreateIuguInvoices < ActiveRecord::Migration[5.2]
       t.string    :payable_with
       t.json      :payer
       t.integer   :status
-      t.reference :customer
+      t.references :customer
 
       t.timestamps null: false
     end
