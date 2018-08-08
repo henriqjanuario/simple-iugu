@@ -6,7 +6,7 @@ class SimpleIugu::Customer < ActiveRecord::Base
   has_many :payment_methods, table_name: 'iugu_payment_methods'
   has_many :invoices, table_name: 'iugu_invoices'
 
-  before_create :create_customer_on_iugu
+  before_save :create_customer_on_iugu
   before_update :update_customer_on_iugu
   before_destroy :destroy_customer_on_iugu
 
